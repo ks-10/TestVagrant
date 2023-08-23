@@ -6,7 +6,7 @@ import java.util.LinkedHashSet;
 //This store must have the capability to store a list of song-user pairs, with each song linked to a user.
 //It should also be able to fetch recently played songs based on the user and eliminate the least recently played songs when the store becomes full.
 
-public class Songs {
+public class firstApproach {
 	
 	//Maximum number of songs that can be stored
 	// Set to store song names
@@ -14,7 +14,7 @@ public class Songs {
     private LinkedHashSet<String> songs;
 
     //Constructor to initialize the Songs with a specified maximum length.	
-    public Songs(int length) {
+    public firstApproach(int length) {
         this.length = length;
         this.songs = new LinkedHashSet<>();
     }
@@ -49,62 +49,5 @@ public class Songs {
         System.out.println();
     }
 
-    public static void main(String[] args) {
-       
-    	//Given test case
-    	System.out.println("Test Case 1 : ");
-    	data1();
-    	//Test case for repeating nodes
-    	System.out.println("Test Case 2 : ");
-    	data2();
-    	//Test case for exceeding length
-    	System.out.println("Test Case 3 : ");
-    	data3();
-    	 
-        
-    }
-
-	private static void data3() {
-		 Songs ob = new Songs(3);
-		 ob.addSong("S1");
-		 ob.addSong("S2");
-		 ob.addSong("S3");
-		 ob.addSong("S4");
-		 ob.print();
-		//S2 S3 S4
-	}
-
-	private static void data2() {
-		Songs ob = new Songs(3);
-		ob.addSong("S1");
-		ob.addSong("S2");
-		ob.addSong("S3");
-		ob.addSong("S2");
-		ob.print(); 
-	       //S1 S3 S2
-		
-	}
-
-	private static void data1() {
-		 Songs ob = new Songs(3);
-
-		 ob.addSong("S1");
-		 ob.addSong("S2");
-		 ob.addSong("S3");
-		 ob.print(); 
-
-		 ob.addSong("S4");
-		 ob.print();  
-
-		 ob.addSong("S2");
-		 ob.print();  
-
-		 ob.addSong("S1");
-		 ob.print(); 
-	        
-//	        S1 S2 S3 
-//	        S2 S3 S4 
-//	        S3 S4 S2 
-//	        S4 S2 S1
-	}
+   
 }
